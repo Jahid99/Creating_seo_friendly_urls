@@ -1,0 +1,17 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+RewriteCond %[REQUEST_FILENAME] !-f
+
+RewriteRule ^([^\.]+)$ $1.html [NC]
+
+RewriteRule (.*)_(.*)_(.*)/\.html test.php?programming=$1&cat=$2&subcat=$3
+
+RewriteRule platform_(.*)/\.html test.php?cat=$1
+
+RewriteRule (.*)_(.*)_(.*)\.html test.php?programming=$1&cat=$2&subcat=$3
+
+RewriteRule platform_(.*)\.html test.php?cat=$1
+
+RewriteRule (.*)\.html test.php?platforms=all
